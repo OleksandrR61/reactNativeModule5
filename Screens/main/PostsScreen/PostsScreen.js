@@ -1,7 +1,11 @@
+import { useState } from "react";
+
 import { PostsContainer, PostsUser, PostsList } from "../../../components";
 
+import userExample from "../../../example/userExample";
+
 const PostsScreen = ({route, navigation}) => {
-    const { user } = route.params;
+    const [ user, setUser ] = useState(userExample);
     
     return <PostsContainer>
         <PostsUser user={user}/>

@@ -1,8 +1,11 @@
-import { Container, InnerContainer, PageHeader, ProfileAvatar, BtnAdditionalImg, PostsList } from "../../../components";
-import { TouchableOpacity, Image } from 'react-native'
+import { useState } from "react";
 
-const ProfileScreen = ({route, navigation}) => {
-    const { user } = route.params;
+import { Container, InnerContainer, PageHeader, ProfileAvatar, BtnAdditionalImg, PostsList } from "../../../components";
+
+import userExample from "../../../example/userExample";
+
+const ProfileScreen = ({navigation}) => {
+    const [ user, setUser ] = useState(userExample);
     
     return <Container>
     <InnerContainer style={{
