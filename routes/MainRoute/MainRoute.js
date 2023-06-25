@@ -2,6 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from '../../Screens/main/HomeScreen/HomeScreen';
 import CommentsScreen from '../../Screens/main/CommentsScreen/CommentsScreen';
+import MapScreen from '../../Screens/main/MapScreen/MapScreen';
 
 import { Header } from '../../components';
 
@@ -23,6 +24,13 @@ const MainRoute = ({handleAuth}) => <MainStack.Navigator initialRouteName='HomeS
         component={CommentsScreen}
         options={{
             header: ({navigation}) => <Header title={"Коментарі"} back={navigation.goBack}/>,
+        }}
+    />
+    <MainStack.Screen
+        name={'MapScreen'}
+        component={MapScreen}
+        options={{
+            header: ({navigation}) => <Header title={"Локація"} back={navigation.goBack}/>,
         }}
     />
 </MainStack.Navigator>;

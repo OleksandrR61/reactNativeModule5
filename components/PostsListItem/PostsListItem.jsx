@@ -36,11 +36,19 @@ export const PostsListItem = ({post, screen, navigation}) => <View style={styles
             }
         </View>
         <View style={styles.comment}>
-            <Image source={require('../../assets/img/mapPin.png')} style={styles.commentImg}/>
+            <BtnAdditionalImg
+                source={require('../../assets/img/mapPin.png')}
+                styleBtn={{position: "relative"}}
+                styleImg={styles.commentImg}
+                onPress={() => navigation.navigate("MapScreen", {
+                    ...post.location,
+                    title: post.title}
+                )}
+            />
             <Text style={styles.location}>
                 {screen === "profile" 
-                    ? post.location.split(",").reverse()[0]
-                    : post.location
+                    ? post.location.title.split(",").reverse()[0]
+                    : post.location.title
                 }
             </Text>
         </View>

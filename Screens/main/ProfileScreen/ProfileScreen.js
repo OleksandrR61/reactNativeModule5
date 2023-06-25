@@ -31,7 +31,7 @@ const ProfileScreen = ({navigation}) => {
             {user.name}
         </PageHeader>
         <PostsList
-            posts={user.posts}
+            posts={[]}
             screen={"profile"}
             navigation={navigation}
         />

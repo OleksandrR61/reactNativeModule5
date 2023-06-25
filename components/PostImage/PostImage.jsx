@@ -2,7 +2,7 @@ import { Image, Dimensions, StyleSheet } from "react-native";
 
 const windowWidth = Dimensions.get('window').width;
 
-export const PostImage = ({source}) => <Image source={source} style={styles.img}/>
+export const PostImage = ({source}) => <Image source={{uri: source}} style={styles.img}/>
 
 const styles = StyleSheet.create({
     img: {
